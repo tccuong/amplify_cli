@@ -2,7 +2,17 @@
   "auth": {
     "amplifyclie1b33d48": {
       "customAuth": false,
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "amplifyclie1b33d48PostConfirmation",
+          "triggerProvider": "Cognito"
+        }
+      ],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
         "mfaTypes": [
@@ -23,6 +33,39 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "amplifyclie1b33d48PostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_amplifyclie1b33d48PostConfirmation_GROUP": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifyclie1b33d48PostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_amplifyclie1b33d48PostConfirmation_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifyclie1b33d48PostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_amplifyclie1b33d48PostConfirmation_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifyclie1b33d48PostConfirmation"
+        }
+      ]
     }
   }
 }
